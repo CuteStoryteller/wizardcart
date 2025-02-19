@@ -1,0 +1,26 @@
+{
+    "baseUrl": "",
+    "productPageSelectors": {
+        "id": "",
+        "name": ""
+    },
+    "productListSelectors": {
+        "names": "",
+        "links": "",
+        "images": "",
+        "descriptions": ""
+    },
+    "productPageOptions": {
+        "idFormat": "numeric",
+        "idMatchIndex": 0,
+        "hasDescriptionLabel": false
+    },
+    "placeholders": {
+        "image": "",
+        "description": ""
+    },
+    "paginations": {
+        "catalog": ["", ""],
+        "search": ["", ""]
+    }
+}

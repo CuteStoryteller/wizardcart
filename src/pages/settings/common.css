@@ -1,0 +1,143 @@
+/*
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+*/
+
+@font-face {
+    font-family: Raleway;
+    src: url('../../assets/fonts/Raleway.ttf');
+}
+
+@font-face {
+    font-family: Lora;
+    src: url('../../assets/fonts/Lora.ttf');
+}
+
+:root {
+    --main-header-height: 70px;
+    --bg-color: #f8f9fa;
+    --text-color: black;
+    --text-light-color: rgba(255, 255, 255, 0.7);
+    --primary-color: #ede7f6;
+    --primary-variant-color: #d1c4e9;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Raleway, sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    user-select: none;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--primary-variant-color)
+        );
+}
+
+button, input {
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-header {
+    justify-content: space-between;
+    height: var(--main-header-height);
+    padding: 5px 50px;
+    font-size: 1.1rem;
+    letter-spacing: -0.001rem;
+    box-shadow: inset -2px -1px 5px var(--primary-variant-color);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 40px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--primary-variant-color) 100%
+        );
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#logo {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    margin-right: 5px;
+    top: -3px;
+}
+
+.app-name {
+    position: relative;
+    top: -4px;
+    font-family: Lora, serif;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+nav > ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-user-drag: none;
+}
+
+.nav-btn {
+    display: flex;
+    width: auto;
+    padding: 10px 15px;
+    transition: background-color 0.2s;
+    border-radius: 10px;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-variant-color);
+}
+
+main {
+    height: calc(100vh - var(--main-header-height));
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}

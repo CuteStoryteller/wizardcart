@@ -1,0 +1,17 @@
+{
+    "baseUrl": "",
+    "productPageSelectors": {
+        "images": "",
+        "description": ""
+    },
+    "productListSelectors": {
+        "names": "",
+        "links": ""
+    },
+    "productPageOptions": {
+        "hasDescriptionLabel": false
+    },
+    "paginations": {
+        "search": ["", ""]
+    }
+}

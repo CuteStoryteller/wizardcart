@@ -1,0 +1,15 @@
+{
+    "credentials": {
+        "username": "",
+        "password": ""
+    },
+    "maxImageMetadata": {
+        "maxWidth": 900,
+        "maxHeight": 900,
+        "maxSize": 300000
+    },
+    "fileManagerOptions": {
+        "successMsg": "File is uploaded!"
+    },
+    "placeholderImage": ""
+}

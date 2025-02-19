@@ -1,0 +1,8 @@
+node_modules/
+src/assets/my-default
+notes.js
+
+.vs/
+.vscode/
+
+Thumbs.db

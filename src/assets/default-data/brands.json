@@ -1,0 +1,10 @@
+{
+    "brandName": {
+        "partner": "partnerName",
+        "dirPath": "dir/dir2/dir3"
+    },
+    "brandName2": {
+        "partner": "partnerName",
+        "dirPath": "dir/dir2/dir3"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "productPageOptions": {
+        "overwriteDescription": true,
+        "autoDeleteDescription": true,
+        "overwriteMainImage": true,
+        "autoDeleteMainImage": true,
+        "overwriteSecondaryImages": true,
+        "autoDeleteSecondaryImages": true
+    }
+}

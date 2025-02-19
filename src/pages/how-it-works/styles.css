@@ -1,0 +1,90 @@
+/*
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+*/
+
+:root {
+    --img-width: 50%;
+    --gap: 7%;
+}
+
+main {
+    padding-top: 50px;
+    overflow: scroll;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+h1 span {
+    font-family: Lora;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto var(--gap) auto;
+    width: 90%;
+    padding: 25px;
+    background-color: var(--bg-color);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container img {
+    max-width: var(--img-width);
+    aspect-ratio: initial;
+    object-fit: contain;
+    margin: auto;
+}
+
+.container:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.container:nth-of-type(odd) .text {
+    padding-right: 20px;
+}
+
+.container:nth-of-type(odd) img {
+    margin-right: 0;
+}
+
+.container:nth-of-type(even) .text {
+    padding-left: 20px;
+}
+
+.container:nth-of-type(even) img {
+    margin-left: 0;
+}
+
+.text {
+    font-size: 0.9rem;
+}
+
+.text li {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.text span {
+    font-weight: 700;
+}
+
+.text-app-name {
+    font-family: Lora;
+}
+
+@media (min-width: 1300px) {
+    .text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text {
+        font-size: 1.1rem;
+    }
+}

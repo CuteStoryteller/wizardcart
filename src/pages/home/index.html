@@ -1,0 +1,127 @@
+<!--
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task manager</title>
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="./task.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+    </head>
+    <body>
+        <header id="main-header">
+            <div id="logo-container">
+                <svg id="logo" width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                    <!--Stacked Product Cards-->
+                    <rect x="40" y="50" width="70" height="50" rx="5" fill="#3498db" stroke="#2c3e50" stroke-width="3"/>
+                    <rect x="45" y="55" width="70" height="50" rx="5" fill="#5dade2" stroke="#2c3e50" stroke-width="3"/>
+                    <rect x="50" y="60" width="70" height="50" rx="5" fill="#85c1e9" stroke="#2c3e50" stroke-width="3"/>
+                    
+                    <!--Image Placeholder-->
+                    <rect x="55" y="65" width="20" height="20" fill="#f1c40f" stroke="#2c3e50" stroke-width="2"/>
+                    <polyline points="56,80 65,70 74,80" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                    <circle cx="65" cy="72" r="2" fill="#2c3e50"/>
+                    
+                    <!--Text Lines-->
+                    <line x1="78" y1="68" x2="110" y2="68" stroke="white" stroke-width="2"/>
+                    <line x1="78" y1="75" x2="110" y2="75" stroke="white" stroke-width="2"/>
+                    <line x1="78" y1="82" x2="110" y2="82" stroke="white" stroke-width="2"/>
+                    
+                    <!--Magic Wand-->
+                    <rect x="90" y="30" width="8" height="50" transform="rotate(45 90 30)" fill="#2c3e50"/>
+                    <circle cx="94" cy="28" r="6" fill="gold" stroke="orange" stroke-width="2"/>
+                    
+                    <!--Magic Sparkles-->
+                    <circle cx="110" cy="20" r="4" fill="gold"/>
+                    <circle cx="125" cy="40" r="3" fill="gold"/>
+                    <circle cx="100" cy="50" r="3" fill="gold"/>
+                </svg>
+                <span class="app-name">WizardCart</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="nav-btn" href="../home/index.html">Task manager</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../how-it-works/index.html">How it works?</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../settings/index.html">Settings</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../configs/index.html">Configs</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="crit-error-container">
+                <div id="crit-error">
+                    <span id="crit-error-msg"></span>
+                    <button class="close-btn" onclick="showCritError(false)">
+                        <svg viewBox="0 0 50 50" width="15px" height="15px" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="container">
+                    <header class="container-header">
+                        <span class="container-title">Task queue</span>
+                        <div class="queue-btns">
+                            <button class="queue-btn add-btn">
+                                <svg class="plus-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path>
+                                </svg>
+                            </button>
+                            <button class="queue-btn start-btn">
+                                <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1025 1024" version="1.1">
+                                    <path d="M1024 512l-804.0448 512L219.9552 0 1024 512z"/>
+                                </svg>
+                            </button>
+                            <button class="queue-btn stop-btn">
+                                <svg class="stop-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" version="1.1">
+                                    <path d="M274.285714 128h91.428572v768h-91.428572z m466.285715 0h-73.142858c-5.028571 0-9.142857 4.114286-9.142857 9.142857v749.714286c0 5.028571 4.114286 9.142857 9.142857 9.142857h73.142858c5.028571 0 9.142857-4.114286 9.142857-9.142857V137.142857c0-5.028571-4.114286-9.142857-9.142857-9.142857z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="container-area">
+                        <div class="scrollable-area queue-area">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <header class="container-header">
+                        <span class="container-title">Processed tasks</span>
+                    </header>
+                    <div class="container-area">
+                        <div class="scrollable-area processed-area">
+
+
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </main>
+        <div class="popup add-popup">
+            Create new task
+        </div>
+        <div class="popup start-popup">
+            Start processing
+        </div>
+        <div class="popup stop-popup">
+            Stop processing
+        </div>
+        <script type="module" src="./script.js"></script>
+    </body>
+</html>

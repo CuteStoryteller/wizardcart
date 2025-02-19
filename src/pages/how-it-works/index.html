@@ -1,0 +1,133 @@
+<!--
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task manager</title>
+        <link rel="stylesheet" href="./common.css">
+        <link rel="stylesheet" href="./styles.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+    </head>
+    <body>
+        <header id="main-header">
+            <div id="logo-container">
+                <svg id="logo" width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                    <!--Stacked Product Cards-->
+                    <rect x="40" y="50" width="70" height="50" rx="5" fill="#3498db" stroke="#2c3e50" stroke-width="3"/>
+                    <rect x="45" y="55" width="70" height="50" rx="5" fill="#5dade2" stroke="#2c3e50" stroke-width="3"/>
+                    <rect x="50" y="60" width="70" height="50" rx="5" fill="#85c1e9" stroke="#2c3e50" stroke-width="3"/>
+                    
+                    <!--Image Placeholder-->
+                    <rect x="55" y="65" width="20" height="20" fill="#f1c40f" stroke="#2c3e50" stroke-width="2"/>
+                    <polyline points="56,80 65,70 74,80" stroke="#2c3e50" stroke-width="2" fill="none"/>
+                    <circle cx="65" cy="72" r="2" fill="#2c3e50"/>
+                    
+                    <!--Text Lines-->
+                    <line x1="78" y1="68" x2="110" y2="68" stroke="white" stroke-width="2"/>
+                    <line x1="78" y1="75" x2="110" y2="75" stroke="white" stroke-width="2"/>
+                    <line x1="78" y1="82" x2="110" y2="82" stroke="white" stroke-width="2"/>
+                    
+                    <!--Magic Wand-->
+                    <rect x="90" y="30" width="8" height="50" transform="rotate(45 90 30)" fill="#2c3e50"/>
+                    <circle cx="94" cy="28" r="6" fill="gold" stroke="orange" stroke-width="2"/>
+                    
+                    <!--Magic Sparkles-->
+                    <circle cx="110" cy="20" r="4" fill="gold"/>
+                    <circle cx="125" cy="40" r="3" fill="gold"/>
+                    <circle cx="100" cy="50" r="3" fill="gold"/>
+                </svg>
+                <span class="app-name">WizardCart</span>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="nav-btn" href="../home/index.html">Task manager</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../how-it-works/index.html">How it works?</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../settings/index.html">Settings</a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="../configs/index.html">Configs</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="text">
+                    The primary goal of <span class="text-app-name">WizardCart</span> is to automatically fill product cards.
+                    It manages the entire process:
+                    <ul>
+                        <li><span>analyzing</span> which product cards need to be filled on your website</li>
+                        <li><span>downloading</span> images and description from supplier websites</li>
+                        <li><span>optimizing</span> images</li>
+                        <li><span>navigating</span> through OpenCart</li>
+                        <li><span>filling</span> product cards with downloaded images and description</li>
+                    </ul>
+                    <br>
+                    Simply queue the desired task. You have two options: fill an individual product or update all products of
+                    a specific brand.
+                    <ul>
+                        <li>For an <span>individual product</span>, provide either product ID or product page URL from your website</li>
+                        <li>For a <span>brand-wide update</span>, specify a brand name, and <span class="text-app-name">WizardCart</span>
+                        will fill in product cards that are missing a main image or description</li>
+                    </ul>
+                </div>
+                <img src="../../assets/images/home-1.png">
+            </div>
+            <div class="container">
+                <div class="text">
+                    Once processing starts, tasks will be handled one by one. You can click <span>stop processing</span> button at any time
+                    but the process will not stop immediately. Make sure to check your internet connection, as <span class="text-app-name">WizardCart</span>
+                    may not function properly with a slow one.
+                    <br><br>
+                    While tasks are being processed, you will receive real-time status updates. Once a brand task is completed (whether successfully or not),
+                    you can <span>copy to clipboard</span> all details about brand products that need to be filled in. You can also <span>redo</span> a task
+                    by clicking the corresponding button, or <span>delete</span> it.
+                </div>
+                <img src="../../assets/images/home-2.png">
+            </div>
+            <div class="container">
+                <div class="text">
+                    For task processing the following files are required:
+                    <ul>
+                        <li><span>admin.json:</span> OpenCart data of your website to fill product cards</li>
+                        <li><span>brands.json:</span> brand information</li>
+                        <li><span>scraper.json:</span> HTML structure details of your website and supplier (partner) websites for extracting product data</li>
+                    </ul>
+                    <br>
+                    To configure <span>scraper.json</span> refer to the <span>product-scraper</span> library documentation.
+                    For <span>admin.json</span>, check the <span>cartmin</span> library documentation. Additionally <span>admin.json</span> must specify the
+                    maximum size and dimensions of images allowed by OpenCart. Each brand entry in <span>brands.json</span> must include the supplier
+                    name and the corresponding OpenCart image directory path. Try to keep the directory structure in OpenCart's file manager as simple as possible.
+                    Finally, each partner's scraper-like file need to be specified.
+                </div>
+                <img src="../../assets/images/configs-1.png">
+            </div>
+            <div class="container">
+                <div class="text">
+                    Click on a file to open it in the editor. Remember that while tasks are being processed, you cannot modify settings or config files.
+                    Additionally, you cannot delete, rename or edit <span>admin.json, brands.json, scraper.json</span> at any time.
+                    <br><br>
+                    What you <span>can</span> do:
+                    <ul>
+                        <li><span>add a new file</span> (partner scraper) by clicking button "add a new file" or pressing "Ctrl + n"</li>
+                        <li><span>save a file</span> by clicking the save button or pressing "Ctrl + s". If the file cannot be parsed as JSON,
+                            the save button will turn red, and corrupted version will not be saved</li>
+                        <li><span>delete a file</span> by selecting it and pressing "Delete"</li>
+                        <li><span>rename a file</span> by selecting it and pressing "r"</li>
+                    </ul>
+                </div>
+                <img src="../../assets/images/configs-2.png">
+            </div>
+        </main>
+    </body>
+</html>

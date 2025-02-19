@@ -1,0 +1,36 @@
+{
+  "name": "wizardcart",
+  "version": "1.0.0",
+  "description": "Electron-based app to automize filling product cards on e-commerce websites",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CuteStoryteller/wizardcart.git"
+  },
+  "author": "CuteStoryteller",
+  "keywords": [
+    "e-commerce",
+    "web",
+    "automize",
+    "app",
+    "electron",
+    "product-cards"
+  ],
+  "bugs": {
+    "url": "https://github.com/CuteStoryteller/wizardcart/issues"
+  },
+  "homepage": "https://github.com/CuteStoryteller/wizardcart#readme",
+  "dependencies": {
+    "@cute-storyteller/image-optimizerjs": "^1.0.0",
+    "cartmin": "^1.0.2",
+    "lodash": "^4.17.21",
+    "product-scraperjs": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1"
+  }
+}

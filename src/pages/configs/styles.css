@@ -1,0 +1,166 @@
+/*
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+*/
+
+:root {
+    --area-color: #5c546e;
+    --hover-color: #797188;
+    --active-color: #76b4ff8a;
+    --warning-color: rgba(253, 70, 100, 0.5);
+    --divider-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+    padding-top: 50px;
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    width: 900px;
+    max-width: 90%;
+    height: 90%;
+    background-color: var(--area-color);
+    font-size: 0.9rem;
+    color: var(--text-light-color);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container.user-block {
+    pointer-events: none;
+}
+
+.explorer {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-width: 200px;
+    padding-left: 15px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-size: inherit;
+    letter-spacing: 0.03rem;
+}
+
+.files {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#main, #partners {
+    width: 100%;
+}
+
+#main::before {
+    content: "main";
+    display: block;
+    width: 100%;
+}
+
+#partners {
+    position: relative;
+}
+
+#partners::before {
+    content: "partners";
+    display: block;
+    width: 100%;
+}
+
+.file {
+    padding-left: 15px;
+}
+
+.file:hover,
+.save-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.new-file-btn {
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.new-file-btn svg {
+    height: 1rem;
+    fill: var(--text-light-color);
+}
+
+.new-file-btn:hover {
+    transform: scale(1.1);
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+
+.editor-header {
+    position: relative;
+    height: 30px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.save-btn {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 15px;
+    color: inherit;
+    letter-spacing: 0.05rem;
+    border-radius: 3px;
+    border-left: 1px solid var(--divider-color);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.editor {
+    max-width: calc(90vw - 201px);
+    height: calc(100% - 30px);
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.07rem;
+    background-color: var(--area-color);
+    overflow-y: scroll;
+    white-space: pre-wrap;
+}
+
+.editor:focus {
+    outline: none;
+}
+
+.divider {
+    width: 1px;
+    min-width: 1px;
+    height: 100%;
+    background-color: var(--divider-color);
+}
+
+.save-btn.warning {
+    background-color: var(--warning-color);
+}
+
+.file.active {
+    background-color: var(--active-color);
+}
+
+.file input {
+    background-color: transparent;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}

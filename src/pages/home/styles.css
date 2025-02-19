@@ -1,0 +1,199 @@
+/*
+Copyright (c) 2025 CuteStoryteller
+All Rights Reserved. MIT License
+*/
+
+:root {
+    --header-color: #d0c1eb;
+    --area-color: #9283af;
+    --btn-hover-color: #e0d3fa;
+    --error-color: rgb(255, 196, 206);
+    --container-width: min(600px, calc(50vw - 45px));
+}
+
+main {
+    padding-bottom: 30px;
+}
+
+#crit-error-container {
+    height: 50px;
+    padding: 8px 0;
+}
+
+#crit-error {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    position: relative;
+    width: var(--container-width);
+    height: 100%;
+    margin-left: calc((50vw - var(--container-width)) / 1.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    font-size: 0.9rem;
+    background-color: var(--error-color);
+}
+
+#crit-error::before {
+    content: "Critical error:";
+    font-weight: 700;
+}
+
+#crit-error.show {
+    opacity: 1;
+}
+
+#crit-error .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    aspect-ratio: 1;
+    transition: trasform 0.2s;
+}
+
+#crit-error .close-btn:hover {
+    transform: scale(1.1);
+}
+
+#crit-error .close-btn:active {
+    transform: scale(1.2);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: calc(100vh - var(--main-header-height) - 80px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: var(--container-width);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container-header {
+    position: relative;
+    height: 40px;
+    box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.1),
+                inset 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: var(--header-color);
+}
+
+.container-title {
+    font-family: Raleway, serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.queue-btns {
+    display: flex;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: visible;
+}
+
+.queue-btn {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    transition: background-color 0.5s;
+    border: none;
+}
+
+.queue-btn::before {
+    content: "";
+    height: 90%;
+    width: 2px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.queue-btn > svg {
+    fill: currentColor;
+    margin: 15%;
+    transition: transform 0.2s;
+}
+
+.queue-btn:hover, .queue-btn:active {
+    background-color: var(--btn-hover-color);
+}
+
+.queue-btn > svg:hover {
+    transform: scale(1.1);
+}
+
+.queue-btn > svg:active {
+    transform: scale(1.2);
+}
+
+.stop-btn,
+.queue-btns.stop .start-btn {
+    display: none;
+}
+
+.queue-btns.stop .stop-btn {
+    display: flex;
+}
+
+.start-icon {
+    margin: 20%!important;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: opacity 0.2s 0.7s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.popup.show {
+    opacity: 1;
+}
+
+.container-area {
+    height: 100%;
+    position: relative;
+    background-color: var(--area-color);
+}
+
+.container-area::before, .container-area::after {
+    content: "";
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container-area::before {
+    top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+}
+
+.container-area::after {
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), transparent);
+}
+
+.scrollable-area {
+    height: 100%;
+    position: relative;
+    overflow-y: hidden;
+}
